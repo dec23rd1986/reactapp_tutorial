@@ -17,9 +17,8 @@ const store = createStore(rootReducer,
         reduxFirestore(fbConfig),
         reactReduxFirebase(fbConfig, { attachAuthIsReady: true })
         )
-    );
-    
-store.firebaseAuthIsReady.then(() => {
+        );  
+  store.firebaseAuthIsReady.then(() => {
     ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
     serviceWorker.unregister();    
-})
+  });
